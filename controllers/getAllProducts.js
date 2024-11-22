@@ -3,11 +3,11 @@ import { formatearFiltrosDB } from "../utils/functions.js";
 
 export const getAllProducts = (req, res, next) => {
     const filtroNombre = formatearFiltrosDB(req.query.nombre);
-    const filtroPrecio = formatearFiltrosDB(req.query.precio);
+    const filtroCategoria = formatearFiltrosDB(req.query.categoria);
 
     const filtros = {}
     if(filtroNombre) filtros.nombre = filtroNombre; 
-    if(filtroPrecio) filtros.precio = filtroPrecio;
+    if(filtroCategoria) filtros.categoria = filtroCategoria;
 
     
     ModeloProducto.find(filtros)
