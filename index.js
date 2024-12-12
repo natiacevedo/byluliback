@@ -18,6 +18,9 @@ import { postCompra } from "./controllers/postCompra.js";
 
 const app = express();
 const port = 3000;
+const baseUrl = process.env.NODE_ENV === "production" 
+    ? "https://byluliback.onrender.com" 
+    : "http://localhost:3000";
 app.use(express.json());
 app.use(cors());
 
