@@ -19,9 +19,18 @@ import { postCompra } from "./controllers/postCompra.js";
 const app = express();
 const port = 3000;
 const baseUrl = "http://localhost:3000";
-app.use(express.json());
-app.use(cors());
 
+// Configuración de CORS
+app.use(cors({
+    origin: "*", // Permite solicitudes solo desde este origen
+    methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
+    credentials: true // Si necesitas enviar cookies o encabezados de autenticación
+}));
+
+app.use(express.json());
+  /* 
+app.use(cors); */
+  
 await conectartDb();
 
 app.use(mostrarDatosRequest)
