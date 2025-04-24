@@ -17,8 +17,9 @@ import { logoutUsuario } from "./controllers/logoutUsuario.js";
 import { postCompra } from "./controllers/postCompra.js";
 
 const app = express();
-const port = 3000;
-const baseUrl = "http://localhost:3000";
+/* const port = 3000; */
+/* const baseUrl = "http://localhost:3000"; */
+const port = process.env.PORT || 3000;
 
 // Configuración de CORS
 app.use(cors({
